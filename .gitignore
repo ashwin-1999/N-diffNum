@@ -1,52 +1,39 @@
-# Prerequisites
-*.d
-
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+#include<stdio.h>
+int inputarray(int n,int a[n])
+{
+        printf("Enter %d number\n",n);
+        for(int i=0;i<n;i++)
+        {
+                scanf("%d",&a[i]);
+        }
+        return 0;
+}
+int sumarray(int n,int a[n])
+{
+        int sum=0;
+        for(int i=0;i<n;i++)
+        {
+                sum=sum+a[i];
+        }
+        return sum;
+}
+int outputarray(int n,int a[n])
+{
+        printf("The entered array\n");
+        for(int i=0;i<n;i++)
+        {
+                printf("%d",a[i]);
+        }
+        int s=sumarray(n,a);
+        printf("Sum=%d",s);
+        return 0;
+}
+int main()
+{
+        int a[100],n;
+        printf("Enter the size of the array\n");
+        scanf("%d",&n);
+        inputarray(n,a);
+        outputarray(n,a);
+        return 0;
+}
